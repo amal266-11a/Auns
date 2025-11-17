@@ -1,0 +1,460 @@
+/* ======================================= */
+/* 1. لوحة الألوان والخطوط الجديدة (لم تتغير)*/
+/* ======================================= */
+/*استخدمت الرووت عشان احط فيه الكوستم بروبرتي ويصير بدل ما احط الالوان بكل مكان واتلخبط علاص
+احطها بمكان واحد واقدر اعدل عليها بسهوله واوحد القيم 
+*/
+:root {
+    /* ألوان حيوية ومرحة */
+    --color-bg-light: #fffff9; 	 	 /* خلفية وردية فاتحة جداً */
+    --color-primary-fun: #936bf1; 	 /* أحمر مرجاني/وردي حيوي (للعناوين) */
+    --color-secondary-fun: #00bcd4; 	 /* أزرق سماوي نقي (للمميزات) */
+    --color-cta-prominent: #bfc0fc; 	/* أخضر ليموني ساطع (لزري Sign Up) */
+    --color-text-dark: #37300a;
+    --color-text-highlight: #8d94ef; /* برتقالي للمسافات البارزة */
+    --color-transparent-overlay: rgba(255, 255, 255, 0.75); /* خلفية شفافة */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    background-color: var(--color-bg-light); 
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* التنسيق العام لجميع العناوين - تم إزالة الـ transition */
+h2 {
+    color: var(--color-primary-fun);
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 700;
+    margin-bottom: 40px;
+    
+    /* تم إزالة موشن العناوين */
+    /* transition: transform 0.4s ease-out, opacity 0.4s ease-out; */
+}
+
+/* ======================================= */
+/* 2. شريط التنقل (Navbar) - أزرار مربعة وثابتة     */
+/* ======================================= */
+
+header {
+    background-color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* تحويل الروابط إلى أزرار مربعة (زوايا 4px) مع إزالة الحركة */
+header nav a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin-left: 10px;
+    padding: 8px 15px; 
+    font-weight: 600;
+    border: 2px solid transparent; /* الحدود الأصلية */
+    border-radius: 4px; /* شكل مربع/مستطيل بزوايا طفيفة */
+    /* تم إزالة transition: all 0.3s; */
+}
+
+header nav a:hover {
+    color: var(--color-primary-fun);
+    border-color: var(--color-primary-fun);
+    /* لا توجد حركات عند التمرير */
+}
+
+/* تنسيق زر Sign Up المميز - تم توحيد شكله ليكون مربعًا وإزالة الموشن */
+.signup-button {
+    background-color: var(--color-cta-prominent); 
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 4px; /* شكل مربع/مستطيل */
+    font-weight: 700;
+    margin-left: 25px;
+    box-shadow: 0 4px 8px rgba(139, 195, 74, 0.4);
+    /* تم إزالة transition: all 0.3s; */
+}
+
+.signup-button:hover {
+    /* تم إزالة التحويل: transform: scale(1.05); */
+    background-color: #38499f;
+    /* لا توجد حركات عند التمرير */
+}
+
+/* ======================================= */
+/* 3. قسم الأبطال (Hero Section)           */
+/* ======================================= */
+
+.hero-section {
+    /* تدرج لوني لطيف */
+    background: linear-gradient(145deg, #fce4ec 0%, #fffde7 100%); 
+    padding: 100px 5%; 
+    text-align: center;
+}
+
+/* العنوان بخط مميز ولون بارز */
+.hero-headline {
+    font-family: 'Bungee Shade', cursive; /* استخدام الخط المرسوم باليد */
+    font-size: 4em;
+    color: var(--color-primary-fun);
+    text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8), 
+                 4px 4px 0px var(--color-text-highlight); /* تأثير ظل سميك ومميز */
+    margin-bottom: 20px;
+}
+
+/* الباراجراف بلون مميز وواضح */
+.hero-description {
+    font-size: 1.3em;
+    margin-bottom: 50px;
+    color: var(--color-text-dark); 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* زر (Create Parent Account) - تم توحيد شكله ليكون مربعًا وإزالة الموشن */
+.cta-button.primary-cta {
+    display: inline-block;
+    background-color: var(--color-transparent-overlay); /* شفافية */
+    color: var(--color-primary-fun); /* لون النص البارز */
+    text-decoration: none;
+    padding: 18px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 4px; /* شكل مربع/مستطيل */
+    border: 3px solid var(--color-primary-fun); /* حدود واضحة */
+    /* تم إزالة transition: all 0.3s; */
+    /* ظل خفيف وواضح */
+    box-shadow: 0 6px 15px rgba(255, 255, 238, 0.3);
+}
+
+.cta-button.primary-cta:hover {
+    background-color: var(--color-primary-fun); /* يصبح صلبًا عند المرور */
+    color: white;
+    /* تم إزالة التحويل: transform: translateY(-4px); */
+    box-shadow: 0 8px 20px rgba(255, 254, 239, 0.5);
+}
+
+/* ======================================= */
+/* 4. قسم المميزات (Features) - إزالة الموشن */
+/* ======================================= */
+
+.features-section {
+    background-color: var(--color-bg-light);
+    padding: 80px 5%;
+}
+
+.features-container {
+    padding: 10px;
+    margin-top: 20px;
+    display:list-item;
+    /* على الشاشات الكبيرة، البطاقة المميزة تأخذ مساحة كبيرة */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    margin-top: 50px;
+}
+
+.feature-card {
+    margin-top: 12px;
+    padding: 30px;
+    border-radius: 25px; /* الزوايا الأصلية للبطاقات (غير الأزرار) */
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    /* تم إزالة موشن: transition: transform 0.4s ease-out, box-shadow 0.4s ease-out; */
+    text-align: center;
+    border: 1px solid #eee;
+    z-index: 1; 
+}
+
+/* إلغاء الموشن الخفيف عند المرور */
+.feature-card:hover {
+    /* تم إزالة التحويل: transform: translateY(-8px) rotate(-1deg); */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2; 
+}
+
+/* تنسيق البطاقة المميزة (Special Needs) - تأخذ مساحة أكبر */
+.feature-card.special-needs {
+    background-color: #fffde7; /* أصفر خفيف جداً لإبراز أهمية الميزة */
+    border: 3px solid var(--color-cta-prominent);
+    grid-column: span 2; /* لتأخذ مساحة عمودين */
+    justify-self: center; /* توسيط البطاقة */
+    /* عند وجود 4 بطاقات، هذه البطاقة ستاخذ مكان البطاقتين الاولى والثانية */
+}
+
+/* عند وجود 4 بطاقات، نلغي الـ span 2 ونعيدها للوسط */
+@media (min-width: 1200px) {
+    .features-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .feature-card.special-needs {
+        grid-column: 2 / span 2; /* وضعها في الوسط بين العمود الثاني والثالث */
+    }
+}
+
+
+/* ======================================= */
+/* 5. خطوات الاستخدام (Simple Steps)         */
+/* ======================================= */
+
+.how-it-works {
+    background-color: var(--color-bg-section);
+    padding: 80px 5%;
+}
+
+.how-it-works ol {
+    list-style-type: none; /* إزالة التعداد الافتراضي (الأرقام) */
+    padding: 0;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.how-it-works li {
+    padding: 20px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #ccc;
+    display: flex; /* لترتيب الصورة والنص جنباً إلى جنب */
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.how-it-works li:last-child {
+    border-bottom: none;
+}
+
+/* استبدال التعداد بصور دائرية (باستخدام صور وهمية/Placeholder) */
+.how-it-works li::before {
+    content: ''; 
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-inline-end: 20px;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--color-cta-prominent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* صور الشخصيات (ستحتاج لاستبدال الروابط لاحقاً) */
+.how-it-works li:nth-child(1)::before {
+    /* الصورة 1: شخصية ماجد */
+    background-image: url('img/download.jpeg'); 
+    background-color: #efc9ff;
+}
+.how-it-works li:nth-child(2)::before {
+    /* الصورة 2: شخصية زكية/أحلام */
+    background-image: url('img/download\ \(2\).jpeg ');
+    background-color: #ddfbff;
+}
+.how-it-works li:nth-child(3)::before {
+    /* الصورة 3: شخصية منصور */
+    background-image: url('img/download\ \(1\).jpeg ');
+    background-color: #f9f6d3;
+}
+/* ======================================= */
+/* قسم عرض الفيديو (Video Showcase) - إزالة الموشن        */
+/* ======================================= */
+
+.video-showcase {
+    background-color: #f7f0fa; /* خلفية فاتحة للقسم كله */
+    padding: 100px 5%;
+    text-align: center;
+    position: relative; /* لتحديد موقع عناصر داخلها */
+    overflow: hidden; /* لمنع أي تجاوزات */
+}
+
+.video-player-container {
+    max-width: 900px; /* تحديد أقصى عرض للحاوية */
+    margin: 40px auto; /* توسيط الحاوية أفقياً */
+    position: relative;
+    padding-bottom: 56.25%; /* نسبة العرض للارتفاع 16:9 للحفاظ على تجاوب الفيديو */
+    height: 0;
+    overflow: hidden;
+    background-color: black; /* لون خلفية أسود قبل تحميل الفيديو */
+    border-radius: 25px; /* زوايا دائرية قوية للكفر */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), /* ظل قوي وعميق */
+                0 0 0 10px rgba(147, 107, 241, 0.1); /* إطار شفاف خفيف كجزء من الكفر */
+    /* تم إزالة موشن الكفر */
+    /* transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; */
+    /* transform: scale(0.98); */
+}
+
+/* إلغاء موشن الكفر عند المرور */
+.video-player-container:hover {
+    /* تم إزالة transform: scale(1.01); */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 12px rgba(147, 107, 241, 0.2); /* ظل أعمق وإطار أوضح */
+}
+
+.video-player-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px; /* زوايا دائرية داخلية للفيديو نفسه */
+    /* تأكد أن الفيديو ليس له ظل خارجي، لأن الحاوية هي التي ستعطي الظل */
+}
+
+/* تنسيق زر "View All Videos" - تم توحيد شكله ليكون مربعًا وإزالة الحركة */
+.cta-button.view-all {
+    display: inline-block;
+    margin-top: 50px;
+    background-color: var(--color-secondary-fun); /* أزرق سماوي نقي */
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 4px; /* شكل مربع/مستطيل */
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3); /* ظل أزرق متناسق */
+    /* تم إزالة transition: all 0.3s ease-in-out; */
+}
+
+/* تأثير الـ hover (تم إزالة التحويل transform) */
+.cta-button.view-all:hover {
+    background-color: #00acc1; /* لون أغمق عند المرور */
+    /* تم إزالة التحويل: transform: translateY(-5px) scale(1.03); */
+    box-shadow: 0 12px 25px rgba(0, 188, 212, 0.5);
+}
+/* ======================================= */
+/* قسم التواصل (Contact Form)               */
+/* ======================================= */
+
+.contact-form-section {
+    background-color: var(--color-cta-prominent); /* خلفية بلون مميز لجذب الانتباه */
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: white; /* لجعل العنوان يبرز على الخلفية الملونة */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 40px auto; /* توسيط النموذج */
+    padding: 40px;
+    background-color: white;
+    border-radius: 25px; /* زوايا دائرية قوية */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* ظل عميق لإحساس الرفع */
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-primary-fun); /* لون النص البنفسجي المميز */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 12px; /* الزوايا الأصلية للحقول */
+    font-size: 1em;
+    box-sizing: border-box; /* لضمان أن العرض يشمل الـ padding والـ border */
+    /* تم إزالة transition: border-color 0.3s, box-shadow 0.3s; */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary-fun); /* إطار بنفسجي عند التركيز */
+    box-shadow: 0 0 0 4px rgba(147, 107, 241, 0.2); /* ظل خفيف حول الحقل */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* السماح بتغيير ارتفاع مربع النص فقط */
+    min-height: 150px;
+}
+
+/* تنسيق زر الإرسال (Submit Button) - تم توحيد شكله ليكون مربعًا وإزالة الحركة */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background-color: var(--color-primary-fun); /* استخدام اللون البنفسجي الأساسي */
+    color: white;
+    border: none;
+    border-radius: 4px; /* شكل مربع/مستطيل */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 8px 20px rgba(207, 188, 252, 0.689);
+    /* تم إزالة transition: all 0.3s ease-in-out; */
+}
+
+/* تأثير الـ hover (تم إزالة التحويل transform) */
+.submit-button:hover {
+    background-color: #ba9cfc; /* لون أغمق عند المرور */
+    /* تم إزالة التحويل: transform: translateY(-5px) scale(1.01); */
+    box-shadow: 0 12px 30px rgba(147, 107, 241, 0.6);
+}
+
+/* ======================================= */
+/* التذييل (Footer)                        */
+/* ======================================= */
+
+footer {
+    background-color: var(--color-primary-fun); /* خلفية بنفسجية قوية */
+    color: white;
+    padding: 25px 5%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ======================================= */
+/* 6. استعلامات الوسائط (Responsive)        */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    /* تجميع البطاقات تحت بعضها على الموبايل */
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+    .feature-card.special-needs {
+        grid-column: 1 / -1; /* تأخذ العرض الكامل وتظل في الوسط */
+    }
+
+    .hero-headline {
+        font-size: 2.5em; 
+    }
+    
+    .how-it-works li {
+        flex-direction: column; /* جعل الصورة والنص يتكدسان فوق بعض */
+        text-align: center;
+    }
+    
+    .how-it-works li::before {
+        margin-bottom: 15px;
+        margin-inline-end: 0;
+    }
+    
+    .video-player-container {
+        padding-bottom: 65%; /* قد تحتاج لضبطها أكثر على الجوالات */
+        margin: 20px auto;
+    }
+}
